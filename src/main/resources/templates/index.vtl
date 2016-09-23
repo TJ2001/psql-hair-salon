@@ -1,0 +1,15 @@
+<h3>Welcome to</h3>
+<h1>Salon de Feu Pur</h1>
+
+#if($Stylists)
+  <p>We have amazing stylists, who are artisans at their craft.</p>
+  <ul>
+    #foreach ($stylist in $stylists)
+      <li><a href="/stylists/$stylist.getId()">$stylist.getArtist()</a></li>
+    #end
+  </ul>
+#else
+  <p>There are no stylists at the moment.</p>
+#end
+
+<button type="button" name="button" class="btn btn-danger">Add Another Amazing Stylist</button>
