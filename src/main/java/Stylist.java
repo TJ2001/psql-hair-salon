@@ -56,7 +56,6 @@ public class Stylist {
 	    try(Connection con = DB.sql2o.open()) {
 	      String sql = "INSERT INTO stylists(artist, detail) VALUES (:artist, :detail);";
 	      this.id = (int) con.createQuery(sql, true)
-
 	        .addParameter("artist", this.artist)
 	        .addParameter("detail", this.detail)
 	        .executeUpdate()

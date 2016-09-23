@@ -1,0 +1,14 @@
+<h1>$stylist.getArtist() 's clients:</h1>
+
+<ul>
+  #foreach($task in $stylist.getClients())
+   <li>$client.getName()</li>
+  #end
+</ul>
+
+<form action="/stylists/$stylist.getId()/clients/new" method="post">
+  <input id="stylistId" name="stylistId" type="hidden" value="$stylist.getId()">
+  <button type="submit" class="btn btn-success" id="add-client">Add Client</button>
+</form>
+<br>
+<a href="/stylists">See All Stylists</a>
