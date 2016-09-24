@@ -16,7 +16,7 @@ _The purpose of this application is to take inputs, specifically stylists and th
 * _Open a terminal and run command "postgres"._
 * _Open another terminal or another tab in the terminal run command "psql"._
 * _In PSQL: "CREATE DATABASE hair_salon\_database.sql;"_
-* _In another tab or terminal run these commands: "psql hair_salon\_database.sql"_
+* _In another tab or terminal run these commands: "psql hair_salon\_database < psql hair_salon\_database.sql"_
 * _Open console to the project package folder and run "gradle run" ._
 * _Go to http://localhost:4567/ in a browser preferably Chrome._
 * _Everything should just work fine, if directions are followed._
