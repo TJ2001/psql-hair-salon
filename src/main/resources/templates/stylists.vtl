@@ -1,15 +1,15 @@
 <h1>All Stylists</h1>
-
-#foreach ($stylist in $stylists)
-<a href="/stylists/$stylist.getId()/clients"><h3>$stylist.getArtist()</h3></a>
-<p>$stylist.getDetail()</p>
-<form action="/stylists/$client.getStylistId()/delete" method="post">
-  <input id="stylistId" name="stylistId" type="hidden" value="$stylist.getId()">
-  <button type="submit" class="btn btn-danger" id="delete-client">Delete Entry</button>
-</form>
-<br>
-#end
+<div class="stylist-list">
+  #foreach ($stylist in $stylists)
+    <a href="/stylists/$stylist.getId()">$stylist.getArtist()</a>
+    <p>$stylist.getDetail()</p>
+    <form action="/stylists/$client.getStylistId()/delete" method="post">
+      <input id="stylistId" name="stylistId" type="hidden" value="$stylist.getId()">
+      <button type="submit" class="btn btn-danger" id="delete-client">Delete Entry</button>
+    </form>
+    <br>
+  #end
+</div>
 <hr>
 <br>
-
 <a class="btn btn-primary" href="/stylists/new">Add Stylist</a>

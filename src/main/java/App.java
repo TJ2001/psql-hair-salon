@@ -69,7 +69,7 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("stylists/:id/clients/delete", (request, response) -> {
+    post("stylists/:id/delete", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Stylist stylist = Stylist.find(Integer.parseInt(request.queryParams("stylistId")));
       stylist.delete();
