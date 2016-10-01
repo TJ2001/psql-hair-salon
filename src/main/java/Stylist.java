@@ -74,6 +74,17 @@ public class Stylist {
 		}
 	}
 
+	public void update(String detail, String email, String phoneNumber) {
+		try(Connection con = DB.sql2o.open()) {
+			String sql = "UPDATE stylists SET artist = :artist WHERE id=:id; detail = :detail WHERE id=:id; UPDATE clients SET email = :email WHERE id=:id;";
+			con.createQuery(sql)
+			.addParameter("artist", artist)
+			.addParameter("detail", detail)
+			.addParameter("id", id)
+			.executeUpdate();
+		}
+	}
+
 	public void delete() {
 		try(Connection con = DB.sql2o.open()) {
 			String sql = "DELETE FROM stylists WHERE id=:id;";
