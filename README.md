@@ -17,8 +17,8 @@ _The purpose of this application is to take inputs, specifically stylists and th
 * _Open another terminal or another tab in the terminal run command "psql"._
 
 User is welcome to use the database provided by doing the following:
-* In PSQL: "CREATE DATABASE hair_salon\_database.sql;"_
-* In another tab or terminal run these commands: "psql hair_salon\_database < psql hair_salon\_database.sql"
+* In PSQL: "CREATE DATABASE hairsalon;"_
+* In another tab or terminal run these commands: "psql hairsalon < psql hairsalon.sql"
 
 If user would(s) like to create his/her/their own database.
 * In PSQL: "CREATE DATABASE hair_salon;" "CREATE TABLE clients(id serial PRIMARY KEY, name varchar, detail varchar, email varchar, phone number varchar, stylistid int);" "CREATE TABLE stylists(id serial PRIMARY KEY, artist varchar, detail varchar);" "CREATE DATABASE hairsalon_test WITH TEMPLATE hair_salon;"
