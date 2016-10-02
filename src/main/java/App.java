@@ -104,6 +104,7 @@ public class App {
     post("/stylists/:id/edit", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
+      System.out.println(stylist);
       String artist = request.queryParams("artist");
       String detail = request.queryParams("detail");
       stylist.update(artist, detail);
