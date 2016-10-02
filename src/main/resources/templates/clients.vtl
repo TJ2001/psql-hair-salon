@@ -4,10 +4,11 @@
   <h3>$client.getName()</h3>
   <h4>Phone: $client.getPhoneNumber()</h4>
   <h4>Email: $client.getEmail()</h4>
-  <p>Details: $client.getDetail()</p>
+  <h4>Details: $client.getDetail()</h4>
   <form action="/clients/$client.getId()/delete" method="post">
     <button type="submit" class="btn btn-danger" id="delete-client">Delete Client Entry</button>
   </form>
+    <a href="/clients/$client.getId()/edit" class="btn btn-success">Edit Entry</a>
   <hr>
 </div>
 #end

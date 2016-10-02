@@ -93,6 +93,26 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/clients/:id/edit", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Client client = Client.find(Integer.parseInt(request.params("id")));
+      System.out.println("its working!");
+      model.put("client", client);
+      model.put("template", "templates/client-edit.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/clients/:id/edit", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Client client = Client.find(Integer.parseInt(request.params(":id")));
+      String detail = request.queryParams("detail");
+      String email = request.queryParams("email");
+      String phoneNumber = request.queryParams("phoneNumber");
+      client.update(detail, email, phoneNumber);
+      response.redirect("/clients");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     get("/stylists/:id/edit", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
@@ -104,7 +124,6 @@ public class App {
     post("/stylists/:id/edit", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
-      System.out.println(stylist);
       String artist = request.queryParams("artist");
       String detail = request.queryParams("detail");
       stylist.update(artist, detail);

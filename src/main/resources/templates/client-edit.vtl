@@ -1,0 +1,12 @@
+<h2>Edit Client</h2>
+<form action="/clients/$client.getId()/edit" method="post">
+  <div class ="form-group">
+    <label for="detail">Details:</label>
+    <input id="detail" placeholder=" $client.getDetail()" class="form-control" name="detail" type="text">
+    <label for="phoneNumber">Phone Number: </label>
+    <input id="phoneNumber" placeholder="$client.getPhoneNumber()" class="form-control" name="phoneNumber" type="text">
+    <label for="email">E-mail:</label>
+    <input id="email" placeholder=" $client.getEmail()" class="form-control" name="email" type="text">
+  </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
