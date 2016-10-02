@@ -76,7 +76,7 @@ public class Stylist {
 
 	public void update(String artist, String detail) {
 		try(Connection con = DB.sql2o.open()) {
-			String sql = "UPDATE stylists SET artist = :artist WHERE id=:id; detail = :detail WHERE id=:id; UPDATE clients SET email = :email WHERE id=:id;";
+			String sql = "UPDATE stylists SET artist = :artist WHERE id=:id; UPDATE stylists SET detail = :detail WHERE id=:id";
 			con.createQuery(sql)
 			.addParameter("artist", artist)
 			.addParameter("detail", detail)
