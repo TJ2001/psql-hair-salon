@@ -19,9 +19,10 @@ _The purpose of this application is to take inputs, specifically stylists and th
 User is welcome to use the database provided by doing the following:
 * In PSQL: "CREATE DATABASE hairsalon;"_
 * In another tab or terminal run these commands: "psql hairsalon < psql hairsalon.sql"
+* In PSQL: "CREATE DATABASE hairsalon_test WITH TEMPLATE hairsalon;"
 
 If user would(s) like to create his/her/their own database.
-* In PSQL: "CREATE DATABASE hair_salon;" "CREATE TABLE clients(id serial PRIMARY KEY, name varchar, detail varchar, email varchar, phone number varchar, stylistid int);" "CREATE TABLE stylists(id serial PRIMARY KEY, artist varchar, detail varchar);" "CREATE DATABASE hairsalon_test WITH TEMPLATE hair_salon;"
+* In PSQL: "CREATE DATABASE hair_salon;" "CREATE TABLE clients(id serial PRIMARY KEY, name varchar, detail varchar, email varchar, phoneNumber varchar, stylistid int);" "CREATE TABLE stylists(id serial PRIMARY KEY, artist varchar, detail varchar);" "CREATE DATABASE hairsalon_test WITH TEMPLATE hair_salon;"
 
 * _Open console to the project package folder and run "gradle run" ._
 * _Go to http://localhost:4567/ in a browser preferably Chrome._
